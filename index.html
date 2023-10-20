@@ -1,25 +1,23 @@
 <html>
-
     <head>
         <title>Javascript 01</title>
+        <script src="js/myscript.js" type="text/javascript"></script>
+        <link href="css/style.css">
         <script>
             alert("olá galera!")
 
-            function mudarFrase() {
+            function trocarTexto(){
                 var elemento = document.getElementById("frase")
-                elemento.innerHTML = "Qualquer frase"
-                elemento.style.color = "red";
-                elemento.style.fontSize = "25px";
-                elemento.style.backgroundColor = "yellow";
-                //altera o fundo da página
-                document.body.style.backgroundColor = "blue";
-                elemento.innerHTML = "<img src=\'img/a.jpeg\' />"
+                var elementoNovo = document.getElementById("novaFrase").value
+                elemento.innerHTML = elementoNovo
             }
-        </script>
+        </script>     
     </head>
-
     <body>
         <h1 ondblclick="mudarFrase()" id="frase">Olá Mundo!</h1>
+        <input id="novaFrase" type="text"><br>
+        <input id="botao" type="button" 
+            value="Trocar Frase" 
+            onclick="trocarTexto();"><br>
     </body>
-
 </html>
