@@ -4,28 +4,22 @@
         <title>Javascript 01</title>
         <script>
             alert("olá galera!")
-            var nome = "Wanderson"
-            console.log(" o nome é = " + nome)
 
-            function trocarClasse() {
-                console.log("Chamou trocarClasse!")
-                var fraseAtual = gebi("frase");
-                fraseAtual.className = "h1_2";
+            function mudarFrase() {
+                var elemento = document.getElementById("frase")
+                elemento.innerHTML = "Qualquer frase"
+                elemento.style.color = "red";
+                elemento.style.fontSize = "25px";
+                elemento.style.backgroundColor = "yellow";
+                //altera o fundo da página
+                document.body.style.backgroundColor = "blue";
+                elemento.innerHTML = "<img src=\'img/a.jpeg\' />"
             }
         </script>
-        <script src="js/myscript.js"></script>
-        <link rel="stylesheet" href="css/style.css" />
     </head>
 
     <body>
-        <h1 id="frase"  class="h1_1"
-        onmouseover="trocarClasse()" 
-        ondblclick="mudarFrase()" >Olá Mundo!</h1>
-        <input id="novaFrase" type="text"><br>
-        <input id="botao" type="button" 
-            value="Trocar Frase" 
-            onclick="trocarTexto()"><br>
-
+        <h1 ondblclick="mudarFrase()" id="frase">Olá Mundo!</h1>
     </body>
 
 </html>
