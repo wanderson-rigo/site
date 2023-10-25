@@ -6,19 +6,14 @@
         <link href="css/style.css">
         <script>
             function somar() {
-                let campoN1 = document.getElementById("n1")
-                let valorN1 = parseInt(campoN1.value)
-
-                let campoN2 = document.getElementById("n2")
-                let valorN2 = parseInt(campoN2.value)
-
-                let resultadoDaSoma = valorN1 + valorN2
-
-                let campoResultado =  document.getElementById("resultado")
-                campoResultado.value = resultadoDaSoma
+                var n1 = gebi("n1").value
+                var n2 = gebi("n2").value
+                var resultado = parseInt(n1) + parseInt(n2)
+                gebi("resultado").value = resultado
             }
         </script>
     </head>
+
     <body>
         <h1>Página da minha Calculadora</h1>
         <input type="number" placeholder="123" id="n1">

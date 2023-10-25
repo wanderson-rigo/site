@@ -9,3 +9,7 @@ function mudarFrase() {
     document.body.style.backgroundColor = "blue";
     elemento.innerHTML = "<img src=\'img/a.jpeg\' />"
 }
+
+function gebi(id){
+    return document.getElementById(id)
+}
