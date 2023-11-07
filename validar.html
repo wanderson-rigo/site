@@ -1,54 +1,52 @@
 <html>
-    <head><title>Titulo</title>
-        <script>
-            function trabalhandoNome() {
-                /* explicando variáveis */
-                var nome = prompt("Diga um nome", "Wanderson")
-                var sobrenome = prompt("Diga um sobrenome", "Rigo")
-                var nomeCompleto = nome + " " + sobrenome
-                var tamanhoDoNome = nomeCompleto.length
-                alert("[" + nomeCompleto + "]" +
-                    "\n" + " com tamanho = " + tamanhoDoNome)
 
-                var retorno = confirm("Seu nome é: " + nomeCompleto + "?")
-                if (retorno) {
-                    console.log("beleza!")
-                    document.write("confirmado o nome")
+    <head>
+        <script>
+            function trabalhandoNomes() {
+                var nome = prompt("Diga um nome", "Wanderson")
+                var sobreNome = prompt("Diga um sobrenome", "Rigo")
+                var nomeCompleto = nome + " " + sobreNome
+                var tamanhoDoNome = nomeCompleto.length
+                var txt = nomeCompleto + " \n tem tamanho de " + tamanhoDoNome
+                var resposta = confirm(nomeCompleto + " está certo?")
+
+                if (resposta == true) {
+                    imprimir(txt)
                 } else {
-                    console.log("Ixi, deu ruim!")
-                    document.write("errou o nome")
+                    imprimir("Deu ruim")
                 }
             }
 
-            function trabalhandoNúmeros() {
-                var num1 = prompt("diga um número", 10.3)
-                var num2 = 5
-                var total = parseFloat(num1) + num2
-                alert("total = " + total)
+            function imprimir(texto) {
+                console.log(texto)
+                alert(texto)
+                document.writeln(texto)
             }
-           
-            function validar(){
-				var email = gebi("idEmail").value; 
-				var senha = gebi("idSenha").value;
-			}
-			function maiuscula(){
-				var email = gebi("idEmail").value;
-				gebi("idEmail").value = email.toUpperCase();
-			}
-        </script>        
-		<script type="text/javascript" src="js/myscript.js"></script>
-		</head>
-    <body>        
+
+            function trabalhandoNúmeros() {
+                var n1 = prompt("Diga um número")
+                var n2 = 5
+                var total = parseInt(n1) + n2
+                imprimir(total)
+            }
+
+            //trabalhandoNúmeros()
+        </script>
+    </head>
+
+    <body>
         <center>
             <h1>Validar</h1>
 			<form>
 				<fieldset align="center" style="width:270px"> 
 					<legend>Login:</legend>
-					Email: <input id="idEmail" type="text" onblur="maiuscula();"><br>
+					Email: <input id=“idEmail" type="text" onblur="maiuscula();"><br>
 					Senha: <input id="idSenha" type="password"><br> 
 					<input type="button" value="Enviar" onclick="validar();"> 
 				</fieldset> 
 			</form> 
 		</center> 
+
     </body>
+
 </html>
