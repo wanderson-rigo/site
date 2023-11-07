@@ -1,6 +1,7 @@
 <html>
 
     <head>
+        <script src="js/myscript.js" type="text/javascript"></script>
         <script>
             function trabalhandoNomes() {
                 var nome = prompt("Diga um nome", "Wanderson")
@@ -30,18 +31,49 @@
                 imprimir(total)
             }
 
-            //trabalhandoNúmeros()
+            function validar(){
+                var email = gebi("idEmail").value
+                var senha = gebi("idSenha").value
+                var idade = gebi("idIdade").value
+
+                if (email.length < 5) {
+                    alert("email está errado!")
+                    return
+                }
+
+                if (senha.length < 3) {
+                    alert("senha deve ser maior que 3!")
+                    return
+                }
+
+                if (idade < 16) {
+                    alert("idade deve ser maior que 15!")
+                    return
+                }
+
+                gebi("meuForm").submit()
+                alert("Sucesso!")
+            }
+
+            function maiuscula(){
+                var email = gebi("idEmail").value
+                var emailEmMaiusculas = email.toUpperCase()
+                gebi("idEmail").value = emailEmMaiusculas
+            }
         </script>
     </head>
 
     <body>
         <center>
             <h1>Validar</h1>
-			<form>
+			<form id="meuForm" action="http://jkorpela.fi/cgi-bin/echo.cgi">
 				<fieldset align="center" style="width:270px"> 
 					<legend>Login:</legend>
-					Email: <input id=“idEmail" type="text" onblur="maiuscula();"><br>
-					Senha: <input id="idSenha" type="password"><br> 
+					Email: <input id="idEmail"  name="email" type="email" 
+                        required onblur="maiuscula();" autocomplete="username"><br>
+					Senha: <input id="idSenha" name="senha" type="password" 
+                        autocomplete="current-password"><br> 
+                    Idade: <input id="idIdade" name="idade" type="number"  step="1"><br> 
 					<input type="button" value="Enviar" onclick="validar();"> 
 				</fieldset> 
 			</form> 
