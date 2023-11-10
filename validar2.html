@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Formulário com Condições de Envio</title>
+        <script src="js/myscript.js" type="text/javascript"></script>
+        <script>
+            function validar() {
+                var nome = gebi("idNome").value;
+                var email = gebi("idEmail").value;
+                var peso = gebi("idPeso").value;
+                var idade = gebi("idIdade").value;
+                var altura = gebi("idAltura").value;
+                var senha = gebi("idSenha").value;
+
+                if ((nome != "fulano")) {
+                    alert("Nome deve ser igual a fulano!");
+                    gebi("idNome").focus();
+                    return;
+                }
+
+                if ((email != "nada@nada.com")) {
+                    alert("E-mail deve ser igual a nada@nada.com!");
+                    gebi("idEmail").focus();
+                    return;
+                }          
+                
+                if (idade < 10) {
+                    alert("Idade deve ser maior que 9!");
+                    gebi("idIdade").focus();
+                    return;
+                }
+
+                if ( (peso < 40) || (peso > 150) ) {
+                    alert("Peso deve ser maior que 40 e menor que 150!");
+                    gebi("idPeso").focus();
+                    return;
+                }          
+
+                if (altura < 1.40) {
+                    alert("Altura deve ser maior que 1.40!");
+                    gebi("idAltura").focus();
+                    return;
+                }
+
+                if ( (senha != 1234) && (senha != 4321)   ) {
+                    alert("Senha deve ser igual a 1234 ou 4321!");
+                    gebi("idSenha").focus();
+                    return;
+                }                
+
+                alert("Sucesso!")
+                gebi("meuForm").submit()
+            }
+        </script>
+    </head>
+
+    <body>
+        <h2>Formulário 02</h2>
+        <form id="meuForm" 
+            action="http://jkorpela.fi/cgi-bin/echo.cgi" 
+            method="post">
+
+            Nome:
+            <input type="text" id="idNome" name="nome" 
+                required autofocus value="fulano">
+            <br>
+
+            E-mail:
+            <input type="email" id="idEmail" name="email" required 
+                placeholder="nada@nada.com">
+            <br>
+
+            Idade:
+            <input type="number" id="idIdade" name="idade" required>
+            <br>
+
+            Peso:
+            <input type="number" id="idPeso" name="peso" required min="41" step="0.1">
+            <br>
+
+            Altura
+            <input type="number" id="idAltura" name="altura" step="0.01" required>
+            <br>
+
+            Senha:
+            <input type="password" id="idSenha" name="senha" required>
+            <br>
+
+            <input type="button" value="Enviar" onclick="validar()">
+        </form>
+
+    </body>
+
+</html>
