@@ -19,31 +19,35 @@
                     return;
                 }
 
+                if ((email != "nada@nada.com")) {
+                    alert("E-mail deve ser igual a nada@nada.com!");
+                    gebi("idEmail").focus();
+                    return;
+                }          
+                
                 if (idade < 10) {
                     alert("Idade deve ser maior que 9!");
                     gebi("idIdade").focus();
                     return;
                 }
 
-                if ( (peso < 40) && (peso > 150) ) {
+                if ( (peso < 40) || (peso > 150) ) {
                     alert("Peso deve ser maior que 40 e menor que 150!");
+                    gebi("idPeso").focus();
                     return;
-                }
+                }          
 
                 if (altura < 1.40) {
                     alert("Altura deve ser maior que 1.40!");
+                    gebi("idAltura").focus();
                     return;
                 }
 
                 if ( (senha != 1234) && (senha != 4321)   ) {
                     alert("Senha deve ser igual a 1234 ou 4321!");
+                    gebi("idSenha").focus();
                     return;
-                }
-
-                if ((email != "nada@nada.com")) {
-                    alert("E-mail deve ser igual a nada@nada.com!");
-                    return;
-                }
+                }                
 
                 alert("Sucesso!")
                 gebi("meuForm").submit()
