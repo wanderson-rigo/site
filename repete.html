@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Título</title>
-    <script>
-        function contar(){
-            for (var i = 0; i < 6; i++) {
-                document.write(i + "<br>")
+
+    <head>
+        <title>Título</title>
+        <script>
+            /*
+            achando um valor
+            achando com indexOf
+            removendo */
+            function contar() {
+                //             0       1        2      3
+                var cars = ["fusca", "gol", "opala", 147];
+
+                document.write("tamanho = " + cars.length+ "<br>")
+
+                document.write("<hr>invertido <br>")
+                 //invertido
+                for (let index = cars.length - 1; index >= 0; index--) {
+                    const car = cars[index];
+                    document.write(car + "<br>")                    
+                }
+
+                document.write("<hr>pares <br>")
+
+                //posições pares
+                for (let index = 0; index < cars.length; index = index+2) {
+                    const car = cars[index];
+                    document.write(car + "<br>")                    
+                }
+
+                document.write("<hr> ímpares <br>")   
+
+                //posições ímpares
+                for (let index = 1; index < cars.length; index = index+2) {
+                    const car = cars[index];
+                    document.write(car + "<br>")                    
+                }
             }
-        }
-    </script>
-</head>	
-<body>		
-    <input  type="button" value="Enviar" onclick="contar();">
-</body>
-</html>	
+        </script>
+    </head>
+
+    <body>
+        <input type="button" value="Enviar" onclick="contar();">
+    </body>
+
+</html>
