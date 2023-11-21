@@ -5,7 +5,7 @@
         <title>Título</title>
         <script>
             // Pergunta um valor ao usuário
-            const numeroFornecido = parseInt(prompt("Digite um número:"));
+            const numeroFornecido = parseInt(prompt("Digite o limite:"));
 
             // Preenche um array com valores de 0 até o número fornecido
             const arrayValores = [];
@@ -14,7 +14,7 @@
             }
 
             // Escreve na página cada valor do array
-            document.write("Original:" + arrayValores);
+            document.write("Original: " + arrayValores + "<br>");
             document.write("<hr>");         
 
             // Pergunta um valor para ser removido
@@ -26,7 +26,7 @@
                 arrayValores.splice(index, 1);
             }
 
-            document.write("Alterado:" + arrayValores);
+            document.write("Alterado: " + arrayValores + "<br>");
             document.write("<hr>");
         </script>
     </head>
