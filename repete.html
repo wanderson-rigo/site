@@ -4,35 +4,30 @@
     <head>
         <title>Título</title>
         <script>
-            /*
-            achando um valor dentro do laço for
-            achando com indexOf
-            removendo via splice 
-            */
-            function contar() {
-                //          0       1         2       3        4         5
-                var a = ["josé", "maria", "padre", "joana", "bento", "franscico"]
+            // Pergunta um valor ao usuário
+            const numeroFornecido = parseInt(prompt("Digite um número:"));
 
-                for (let index = 0; index < a.length; index++) {
-                    const element = a[index];
-
-                    if(element == "pastor"){
-                        document.write("casinha:" + index + " tem " + element + "<br>")
-                        break
-                    }
-                }
-                
-                document.write("original = " + a + "<br>")
-                var quem = prompt("Diga um nome")
-                var ondeEsta = a.indexOf(quem) // -1
-                if(ondeEsta != -1){
-                    document.write("casinha:" + ondeEsta + " tem " + quem + "<br>")
-                    a.splice(ondeEsta,1)//remove 1
-                }else{
-                    document.write("não achei: " + quem + "<br>")
-                }
-                document.write("alterado = " + a)
+            // Preenche um array com valores de 0 até o número fornecido
+            const arrayValores = [];
+            for (let i = 0; i <= numeroFornecido; i++) {
+                arrayValores.push(i);
             }
+
+            // Escreve na página cada valor do array
+            document.write("Original:" + arrayValores);
+            document.write("<hr>");         
+
+            // Pergunta um valor para ser removido
+            const valorRemover = parseInt(prompt("Digite um valor para remover:"));
+
+            // Remove o valor fornecido do array
+            const index = arrayValores.indexOf(valorRemover);
+            if (index !== -1) {
+                arrayValores.splice(index, 1);
+            }
+
+            document.write("Alterado:" + arrayValores);
+            document.write("<hr>");
         </script>
     </head>
 
