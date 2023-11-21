@@ -9,33 +9,28 @@
             achando com indexOf
             removendo */
             function contar() {
-                //             0       1        2      3
-                var cars = ["fusca", "gol", "opala", 147];
+                //          0       1         2       3        4         5
+                var a = ["josé", "maria", "padre", "joana", "bento", "franscico"]
 
-                document.write("tamanho = " + cars.length+ "<br>")
+                for (let index = 0; index < a.length; index++) {
+                    const element = a[index];
 
-                document.write("<hr>invertido <br>")
-                 //invertido
-                for (let index = cars.length - 1; index >= 0; index--) {
-                    const car = cars[index];
-                    document.write(car + "<br>")                    
+                    if(element == "pastor"){
+                        document.write("casinha:" + index + " tem " + element + "<br>")
+                        break
+                    }
                 }
-
-                document.write("<hr>pares <br>")
-
-                //posições pares
-                for (let index = 0; index < cars.length; index = index+2) {
-                    const car = cars[index];
-                    document.write(car + "<br>")                    
+                
+                document.write("original = " + a + "<br>")
+                var quem = prompt("Diga um nome")
+                var ondeEsta = a.indexOf(quem) // -1
+                if(ondeEsta != -1){
+                    document.write("casinha:" + ondeEsta + " tem " + quem + "<br>")
+                    a.splice(ondeEsta,1)//remove 1
+                }else{
+                    document.write("não achei: " + quem + "<br>")
                 }
-
-                document.write("<hr> ímpares <br>")   
-
-                //posições ímpares
-                for (let index = 1; index < cars.length; index = index+2) {
-                    const car = cars[index];
-                    document.write(car + "<br>")                    
-                }
+                document.write("alterado = " + a)
             }
         </script>
     </head>
